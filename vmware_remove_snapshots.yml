@@ -4,16 +4,10 @@
   gather_facts: false
   connection: local
   vars:
-    vcenter_hostname: dul1vspherv1p.accounts.intern
-    vcenter_user: ansibleservice@ACCOUNTS.INTERN
-    vcenter_pass: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          38643334383766323364323535623966353865343139383662663266383065396335633362353964
-          3236636566376361366436373066366161346465393639640a336139613564643230626361363733
-          65643235346361616632396666333063653134313462653564313638366164663732363264646334
-          3930616134653233350a643133393138353836323834306435393637396663303564376530613762
-          32353866356438313035313262306565303766343466626231326432316263356136
-    esxhost: 10.82.2.24
+    vcenter_hostname: <add_your_vc_ip_or_hostname>
+    vcenter_user: <add_your_username>
+    vcenter_pass: <add_your_password>
+    esxhost: <add-1_esx_host-ip_in_cluster>
     datastore: TWN1ESXSVP2P.16TB_LOCAL
     vmtemplate: TWN1_2016_Template
     name: "{{ vm_name }}"
