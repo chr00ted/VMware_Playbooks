@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  vars:
+    vcenter_hostname: <add_your_vc_ip_or_hostname>
+    vcenter_user: <add_your_username>
+    vcenter_pass: <add_your_password>
+    esxhost: <add-1_esx_host-ip_in_cluster>
+    name: "{{ vm_name }}"
+    notes: Ansible Test
+    dumpfacts: False
+
+  - name: Update vmware tools
+    vmware_guest_tools_upgrade:
+      hostname: '{{ vcenter_hostname }}'
+      username: '{{ vcenter_user }}'
+      password: '{{ vcenter_pass }}'
+      datacenter: DUL1
+      validate_certs: no
+      name: "{{ item }}"
+    delegate_to: localhost
+    loop: 
+      - "<add_vm1_name>"
+      - "<add_vm2_name>"
+    
