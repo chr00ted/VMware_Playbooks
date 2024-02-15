@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   vars:
-    vcenter_hostname: {{ vc_ip_or_hostname }}
-    vcenter_user: {{ vc_username }}
-    vcenter_pass: {{ vc_pass }}
-    esxhost: 10.80.202.21
+    vcenter_hostname: <add_your_vc_ip_or_hostname>
+    vcenter_user: <add_your_username>
+    vcenter_pass: <add_your_password>
+    esxhost: <add-1_esx_host-ip_in_cluster>
     name: "{{ vm_name }}"
     notes: Ansible Test
     dumpfacts: False
